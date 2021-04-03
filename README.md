@@ -1,7 +1,3 @@
-# alcool_gasolina
-
-Escolha álcool ou gasolina
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
