@@ -7,6 +7,7 @@ class EntradaSlider extends StatefulWidget {
 
 class _EntradaSliderState extends State<EntradaSlider> {
   double _valorEscolhido = 0;
+  String _label = "0";
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +17,34 @@ class _EntradaSliderState extends State<EntradaSlider> {
         backgroundColor: Colors.purple,
       ),
       body: Container(
+        padding: EdgeInsets.all(50),
         child: Column(
           children: [
             Slider(
-                value: 0,
+                label: _label,
+                divisions: 5,
+                value: _valorEscolhido,
+                activeColor: Colors.purple,
+                min: 0,
+                max: 10,
                 onChanged: (double valor) {
                   setState(() {
                     _valorEscolhido = valor;
+                    _label = valor.toString();
                   });
+                }
+            ),
+            RaisedButton(
+                child: Text('Salvar',
+                  style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white70
+                  ),
+                ),
+                color: Colors.purple,
+                padding: EdgeInsets.all(10),
+                onPressed: (){
+                  print(_valorEscolhido.toInt());
                 }
             )
           ],
